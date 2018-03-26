@@ -36,7 +36,7 @@ install:
   - pip install setuptools wheel
 
 init:
-  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - set "VarsDir=C:\Program Files (x86)\Microsoft Visual Studio 14.0"
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" if "%Platform%"=="x86" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" x86
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2017" if "%Platform%"=="x64" call "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Auxiliary\Build\vcvarsall.bat" amd64
