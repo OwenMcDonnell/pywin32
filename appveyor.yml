@@ -36,7 +36,8 @@ install:
   - pip install setuptools wheel
 
 init:
-  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" if "%Platform%"=="x86" (echo "intermediate check passed")
   - set "VarsDir=C:\Program Files (x86)\Microsoft Visual Studio 14.0"
   - echo %VarsDir%
