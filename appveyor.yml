@@ -38,7 +38,7 @@ install:
 init:
   #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - set "vs2017=Visual Studio 2015"
-  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 15" (echo "first check passed")
+  - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" (echo "first check passed")
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="%vs2017%" (echo "intermediate check passed")
   - if "%Platform%"=="x86" (echo "second check passed")
   - set "VarsDir=C:\Program Files (x86)\Microsoft Visual Studio 14.0"
