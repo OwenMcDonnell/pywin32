@@ -11,15 +11,15 @@ environment:
     - PYTHON_PATH: "C:\\Python27"
       PYTHON_MAJOR: 2
       APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    - PYTHON_PATH: "C:\\Python33"
-      PYTHON_MAJOR: 3
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
+    #- PYTHON_PATH: "C:\\Python33"
+      #PYTHON_MAJOR: 3
+      #APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
     #- PYTHON_PATH: "C:\\Python34"
      # PYTHON_MAJOR: 3
       #APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2015
-    - PYTHON_PATH: "C:\\Python35"
-      PYTHON_MAJOR: 3
-      APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+    #- PYTHON_PATH: "C:\\Python35"
+     # PYTHON_MAJOR: 3
+     # APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
     #- PYTHON_PATH: "C:\\Python36"
      # PYTHON_MAJOR: 3
       #APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
@@ -36,7 +36,7 @@ install:
   - pip install setuptools wheel
 
 init:
-  #- ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
   - if "%APPVEYOR_BUILD_WORKER_IMAGE%"=="Visual Studio 2015" if "%Platform%"=="x86" (echo "intermediate check passed")
   - set "VarsDir=C:\Program Files (x86)\Microsoft Visual Studio 14.0"
   - echo %VarsDir%
